@@ -1,5 +1,6 @@
 // src/stores.js
 import { writable } from 'svelte/store';
+import { persisted } from 'svelte-persisted-store';
 
 /**
  * A writable store that holds a string value.
@@ -46,7 +47,8 @@ export const MedicavetSearchValue = writable('');
 /** @type {import('svelte/store').Writable<any>}*/
 export const MedicavetMinisearch = writable(undefined);
 
-/** @type {import('svelte/store').Writable<string[]>}*/
-export const cours = writable([]);
+export const cours = persisted('cours', []);
+
 /** @type {import('svelte/store').Writable<string>}*/
-export const type = writable('QCM');
+export const type = persisted('type','QCM');
+export const progress = persisted('progress',0);

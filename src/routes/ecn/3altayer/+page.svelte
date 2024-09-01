@@ -1,6 +1,6 @@
 <script>
 	import { ProgressBar } from '@skeletonlabs/skeleton';
-	import { cours, type } from '$lib/stores';
+	import { cours, progress, type } from '$lib/stores';
 	import { onMount } from 'svelte';
 
 	/**@typedef {Object} QuestionJson
@@ -195,6 +195,7 @@
 						class="btn variant-filled-secondary"
 						on:click={() => {
 							showAnswers = true;
+							$progress++;
 						}}>Répondre</button
 					>
 				{:else}
@@ -207,5 +208,13 @@
 				{/if}
 			{/if}
 		</div>
+		<button
+			on:click={() => {
+				$progress = 0;
+			}}
+			class="btn absolute right-0 bottom-0 text-md m-4"
+		>
+			{@html $progress}
+		</button>
 	</div>
 {/if}
