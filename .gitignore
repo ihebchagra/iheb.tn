@@ -23,3 +23,5 @@ vite.config.ts.timestamp-*
 # pdfs
 *.pdf
 pdfjs
+
+bun.lockb

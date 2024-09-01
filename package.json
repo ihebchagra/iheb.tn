@@ -51,7 +51,8 @@
     "mark.js": "^8.11.1",
     "minisearch": "^7.1.0",
     "svelte-awesome": "^3.3.1",
-    "svelte-persisted-store": "^0.11.0"
+    "svelte-persisted-store": "^0.11.0",
+    "sveltekit-sitemap": "^1.0.21"
   },
   "trustedDependencies": [
     "svelte-preprocess"
