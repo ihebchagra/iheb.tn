@@ -48,7 +48,5 @@ export const MedicavetSearchValue = writable('');
 export const MedicavetMinisearch = writable(undefined);
 
 export const cours = persisted('cours', []);
-
-/** @type {import('svelte/store').Writable<string>}*/
 export const type = persisted('type','QCM');
 export const progress = persisted('progress',0);
