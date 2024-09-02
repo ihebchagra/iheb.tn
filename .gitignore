@@ -25,3 +25,4 @@ vite.config.ts.timestamp-*
 pdfjs
 
 bun.lockb
+.firebase/hosting..*.cache
