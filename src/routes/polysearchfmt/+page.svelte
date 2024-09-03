@@ -1,4 +1,4 @@
-<iframe src="/polysearchfmt/index.html" title="Polysearch FMT" class="w-full h-full" frameborder="0"></iframe>
+<iframe src="/polysearchfmt_static/index.html" title="Polysearch FMT" class="w-full h-full" frameborder="0"></iframe>
 
 <svelte:head>
 	<title>Polysearch FMT</title>
