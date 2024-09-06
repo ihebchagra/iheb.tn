@@ -2,9 +2,9 @@
 	import AppList from '$lib/components/AppList.svelte';
 </script>
 
-<div class="container h-full mx-auto flex justify-center items-center mb-4">
-	<div class="space-y-10 text-center flex flex-col items-center">
-		<h1 class="h1 p-4">Iheb Chagra</h1>
+<div class="container h-full mx-auto flex justify-center items-center">
+	<div class="space-y-8 text-center flex flex-col items-center mt-4">
+		<h1 class="h1">Iheb Chagra</h1>
 		<!-- Animated Logo -->
 		<figure>
 			<section class="img-bg" />
@@ -33,7 +33,7 @@
 			Je suis Iheb, médecin interne et futur microbiologiste. Je programme des sites web pour passer
 			le temps
 		</p>
-		<h2 class="h2">Index des Projets sur iheb.tn:</h2>
+		<h2 class="h2">Quelques projets j'ai programmé:</h2>
 		<div class="btn-group-vertical variant-ghost-surface w-80">
 			<AppList />
 		</div>
@@ -63,7 +63,7 @@
 	}
 	figure svg,
 	.img-bg {
-		@apply w-64 h-64 md:w-80 md:h-80;
+		@apply w-52 h-52;
 	}
 	.img-bg {
 		@apply absolute z-[-1] rounded-full blur-[50px] transition-all;
