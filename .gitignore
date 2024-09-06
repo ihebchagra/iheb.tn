@@ -25,7 +25,4 @@ vite.config.ts.timestamp-*
 pdfjs
 
 bun.lockb
-.firebase/hosting..*.cache
-firebase-debug.log
-.firebase/hosting.YnVpbGQ.cache
-.firebase/hosting.YnVpbGQ.cache
+.firebase

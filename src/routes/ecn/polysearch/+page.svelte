@@ -23,7 +23,7 @@
 				messageElement = 'Aucun résultat trouvé (╯°□°）╯︵ ┻━┻';
 			}
 		} else {
-				messageElement = 'Entrez un terme puis recherchez! ;)';
+			messageElement = 'Entrez un terme puis recherchez! ;)';
 		}
 	};
 
@@ -63,9 +63,17 @@
 		<ProgressBar value={undefined} meter="bg-secondary-500" track="bg-secondary-500/30" />
 	{:else}
 		<h1 class="h1 text-center">Polysearch ECN</h1>
-		<p class="text-sm text-center">
-			Moteur de recherche pour les objectifs de l'examen classant national (ECN/résidanat)
-		</p>
+		<div class="text-sm text-center">
+			<div>
+				Moteur de recherche pour les objectifs de l'examen classant national (ECN/résidanat).
+			</div>
+			<div>
+				Ce site coûte du temps et de l'argent de ma part pour maintenir, considérez me supportez <a
+					href="/donate"
+					class="underline">sur ce lien</a
+				>.
+			</div>
+		</div>
 		<div class="input-group input-group-divider grid-cols-[1fr_auto] xl:w-2/3 mx-auto">
 			<input
 				type="search"

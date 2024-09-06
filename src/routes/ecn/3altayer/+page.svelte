@@ -109,7 +109,15 @@
 	<div class="container mx-auto space-y-2 w-screen py-8 mb-16 p-8">
 		{#if showOptions}
 			<h3 class="h3 text-center mb-8">Options</h3>
-			<p>Choisir le type des questions:</p>
+			<div class="text-sm text-center pb-2">
+				<div>
+					Ce site coûte du temps et de l'argent de ma part pour maintenir, considérez me supportez <a
+						href="/donate"
+						class="underline">sur ce lien</a
+					>.
+				</div>
+			</div>
+			<p class="font-bold">Choisir le type des questions:</p>
 			<div class="space-y-2">
 				<label class="flex items-center space-x-2">
 					<input class="radio" type="radio" name="type" bind:group={$type} value="QCM" />
@@ -125,8 +133,8 @@
 				</label>
 			</div>
 			<br />
-			<p>Choisir un ou plusieurs objectifs:</p>
-			<p class="text-sm">aucun choisi = n'importe quel cours</p>
+			<p class="font-bold">Choisir un ou plusieurs objectifs:</p>
+			<p class="text-sm italic">aucun choisi = n'importe quel cours</p>
 			<div class="space-y-2">
 				{#each objectifs as objectif}
 					<label class="flex items-center space-x-2">
