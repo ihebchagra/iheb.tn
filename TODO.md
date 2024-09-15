@@ -1,3 +1,1 @@
 - add a button for guide du survivant
-- make medicasearch have better autocomplete by using minisearch
-- start pediatrie stuff

@@ -7,6 +7,7 @@
 	import paw from 'svelte-awesome/icons/paw';
 	import random from 'svelte-awesome/icons/random';
 	import android from 'svelte-awesome/icons/android';
+	import ellipsisH from 'svelte-awesome/icons/ellipsisH';
 </script>
 
 <a href="/ecn/polysearch">
@@ -35,5 +36,9 @@
 </a>
 <a href="https://play.google.com/store/apps/dev?id=6616843757334685090">
 	<Icon data={android} />
-	<span>Applications Android</span>
+	<span>Mes Applications Android</span>
+</a>
+<a href="/cooltools">
+	<Icon data={ellipsisH} />
+	<span>Autres Outils</span>
 </a>

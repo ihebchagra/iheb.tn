@@ -45,7 +45,7 @@
 				class="underline text-primary-500">sur ce lien</a
 			>
 		</p>
-		<footer class="text-sm">Made with ❤️ By Iheb Chagra</footer>
+		<footer class="text-sm pb-4">Made with ❤️ By Iheb Chagra</footer>
 	</div>
 </div>
 
