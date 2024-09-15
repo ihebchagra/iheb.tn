@@ -179,3 +179,11 @@
 	</div>
 	<p class="text-center py-4">Tout don est grandement apprécié ! Merci de votre soutien ❤</p>
 </div>
+
+<svelte:head>
+	<title>Soutenir iheb.tn</title>
+	<meta
+		name="description"
+		content="Soutenir ce site web"
+	/>
+</svelte:head>

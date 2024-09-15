@@ -177,10 +177,10 @@
 		<h1 class="h1 text-center">Médicasearch</h1>
 		<div class="text-sm text-center">
 			<div>Un petit moteur de recherche de médicaments disponibles en Tunisie.</div>
-			<div>
+			<div class="text-primary-500">
 				Ce site coûte du temps et de l'argent de ma part pour maintenir, considérez me supportez <a
 					href="/donate"
-					class="underline">sur ce lien</a
+					class="underline text-secondary-500">sur ce lien</a
 				>.
 			</div>
 		</div>

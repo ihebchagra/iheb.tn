@@ -109,11 +109,11 @@
 	<div class="container mx-auto space-y-2 w-screen py-8 mb-16 p-8">
 		{#if showOptions}
 			<h3 class="h3 text-center mb-8">Options</h3>
-			<div class="text-sm text-center pb-2">
+			<div class="text-sm text-center pb-2 text-primary-500">
 				<div>
 					Ce site coûte du temps et de l'argent de ma part pour maintenir, considérez me supportez <a
 						href="/donate"
-						class="underline">sur ce lien</a
+						class="underline text-secondary-500">sur ce lien</a
 					>.
 				</div>
 			</div>

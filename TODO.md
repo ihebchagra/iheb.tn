@@ -1,5 +1,3 @@
-- firebase
-- PWA
-
-- when expanding medicaments it becomes bigger than screen
-- autocomplete is super slow
+- add a button for guide du survivant
+- make medicasearch have better autocomplete by using minisearch
+- start pediatrie stuff

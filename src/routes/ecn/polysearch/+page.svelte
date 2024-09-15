@@ -67,10 +67,10 @@
 			<div>
 				Moteur de recherche pour les objectifs de l'examen classant national (ECN/résidanat).
 			</div>
-			<div>
+			<div class="text-primary-500">
 				Ce site coûte du temps et de l'argent de ma part pour maintenir, considérez me supportez <a
 					href="/donate"
-					class="underline">sur ce lien</a
+					class="underline text-secondary-500">sur ce lien</a
 				>.
 			</div>
 		</div>

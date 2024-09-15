@@ -39,10 +39,10 @@
 		</div>
 
 		<h2 class="h2">Devenir un Supporteur:</h2>
-		<p>
+		<p class="">
 			Ce site coûte du temps et de l'argent de ma part pour maintenir, considérez me supportez <a
 				href="/donate"
-				class="underline">sur ce lien</a
+				class="underline text-primary-500">sur ce lien</a
 			>
 		</p>
 		<footer class="text-sm">Made with ❤️ By Iheb Chagra</footer>
