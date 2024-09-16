@@ -8,9 +8,15 @@ body {
 	@apply h-full overflow-hidden;
 }
 
-/* vintage theme */
 @font-face {
-	font-family: 'Abril Fatface';
-	src: url('/fonts/AbrilFatface.ttf');
-	font-display: swap;
+	/* Reference name */
+	font-family: 'Dosis';
+	/* For multiple files use commas, ex: url(), url(), ... */
+	src: url('/fonts/Dosis-VariableFont_wght.ttf');
+}
+
+:root [data-theme='gold-nouveau'] {
+	--theme-font-family-base: 'Dosis', sans-serif;
+	--theme-font-family-heading: 'Dosis', sans-serif;
+	/* ... */
 }

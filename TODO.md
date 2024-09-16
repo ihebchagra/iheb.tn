@@ -1,1 +1,2 @@
 - add a button for guide du survivant
+- fix autocomplete on médicasearch
