@@ -44,7 +44,7 @@
 					storeFields: ['title', 'page', 'content', 'id'],
 					searchOptions: {
 						boost: { title: 3 },
-						fuzzy: 0.2,
+						fuzzy: 0.1,
 						prefix: true
 					}
 				});

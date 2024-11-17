@@ -1,15 +1,16 @@
 <script>
 	// @ts-nocheck
 	import Mark from 'mark.js';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	export let title;
 	export let pageNumber;
 	export let query = '';
 
+	let highlightInterval;
+
 	onMount(() => {
 		window.markInstance = new Mark('span');
 
-		//initialize highlighting
 		function initializeHighlighting() {
 			var pdfViewer = document.getElementById('pdf-viewer');
 			if (pdfViewer.contentDocument.readyState === 'complete') {
@@ -23,19 +24,25 @@
 
 		document.getElementById('pdf-viewer').addEventListener('load', initializeHighlighting);
 
-		setInterval(function () {
+		highlightInterval = setInterval(function () {
 			if (window.markInstance) {
-				// Perform the highlighting
 				window.markInstance.mark(query, {
 					separateWordSearch: true,
 					accuracy: 'partially',
 					diacritics: true,
 					iframes: true,
 					ignorePunctuation: ':;.,-–—‒_(){}[]!\'"+='.split(''),
-					ignoreJoiners: true
+					ignoreJoiners: true,
+					exclude: ['.marked']
 				});
 			}
-		}, 2000	);
+		}, 2000);
+	});
+
+	onDestroy(() => {
+		if (highlightInterval) {
+			clearInterval(highlightInterval);
+		}
 	});
 
 	const viewerUrl = `/pdfjs/web/viewer.html?file=/ecn_pdfs/${encodeURIComponent(title)}.pdf#page=${pageNumber}`;

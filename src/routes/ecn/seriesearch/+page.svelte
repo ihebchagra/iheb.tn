@@ -43,7 +43,7 @@
 					storeFields: ['title', 'cours', 'questionJson', 'type'],
 					searchOptions: {
 						boost: { cours: 3, title: 2 },
-						fuzzy: 0.2,
+						fuzzy: 0.1,
 						prefix: true
 					}
 				});

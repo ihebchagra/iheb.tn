@@ -1,2 +1,8 @@
 - add a button for guide du survivant
 - fix autocomplete on médicasearch
+- fix colors on PWA
+- update android apps
+- use php? https://www.youtube.com/watch?v=dCuefNScYKM
+- find a way to use db in js https://chatgpt.com/share/66ea6a22-4e98-800f-9bf9-dc036a295c67
+- ecosm paid app?
+- verify google search console + bing webmaster tools + google analytics

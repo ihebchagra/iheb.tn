@@ -17,7 +17,7 @@
 	/**
 	 * @type {boolean[]}
 	 */
-	let expandedstates = [true, false, false, false];
+	let expandedstates = [false, false, true, false];
 </script>
 
 <div class="mx-autp">
