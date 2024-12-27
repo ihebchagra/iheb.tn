@@ -8,8 +8,22 @@
 	import random from 'svelte-awesome/icons/random';
 	import android from 'svelte-awesome/icons/android';
 	import ellipsisH from 'svelte-awesome/icons/ellipsisH';
+	import question from 'svelte-awesome/icons/question';
+	import list from 'svelte-awesome/icons/list';
 </script>
 
+<a href="https://quiz.iheb.tn">
+	<Icon data={question} />
+	<span>Quiz Hebdomadaire</span>
+</a>
+<a href="/ecn/3altayer">
+	<Icon data={random} />
+	<span>ECN 3al Tayer</span>
+</a>
+<a href="https://annexe.iheb.tn">
+	<Icon data={list} />
+	<span>Annexe Ultime en Médecine</span>
+</a>
 <a href="/ecn/polysearch">
 	<Icon data={graduationCap} />
 	<span>Polysearch ECN</span>
@@ -17,10 +31,6 @@
 <a href="/ecn/seriesearch">
 	<Icon data={book} />
 	<span>Sériesearch ECN</span>
-</a>
-<a href="/ecn/3altayer">
-	<Icon data={random} />
-	<span>ECN 3al Tayer</span>
 </a>
 <a href="/medicasearch">
 	<Icon data={medkit} />

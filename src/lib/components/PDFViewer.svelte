@@ -4,7 +4,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	export let title;
 	export let pageNumber;
-	// export let query = '';
+	export let query = '';
 
 	let highlightInterval;
 
@@ -44,8 +44,7 @@
 			clearInterval(highlightInterval);
 		}
 	});
-
-	const viewerUrl = `/pdfjs/web/viewer.html?file=/ecn_pdfs/${encodeURIComponent(title)}.pdf#page=${pageNumber}`;
+	const viewerUrl = `/polysearchfmt_static/pdfjs/web/viewer.html?file=/ecn_pdfs/${encodeURIComponent(title)}.pdf&q=${encodeURIComponent(query)}#page=${pageNumber}`;
 </script>
 
 <iframe

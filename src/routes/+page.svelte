@@ -30,8 +30,8 @@
 		</figure>
 		<!-- / -->
 		<p>
-			Je suis Iheb, médecin interne et futur microbiologiste. Je programme des sites web pour passer
-			le temps
+			Je suis Iheb, médecin résident en microbiologie. Je programme des sites web pour passer le
+			temps
 		</p>
 		<h2 class="h2">Quelques projets j'ai programmé:</h2>
 		<div class="btn-group-vertical variant-ghost-surface w-80">

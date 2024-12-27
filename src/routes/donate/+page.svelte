@@ -17,7 +17,7 @@
 	/**
 	 * @type {boolean[]}
 	 */
-	let expandedstates = [false, false, true, false];
+	let expandedstates = [true, false, false, false];
 </script>
 
 <div class="mx-autp">
@@ -61,7 +61,7 @@
 							</li>
 							<li>
 								<span class="badge-icon p-4 variant-soft-primary">{2}</span>
-								<span class="flex-auto"> Choisir n'importe quel montant</span>
+								<span class="flex-auto"> Choisir un montant &leq; 50 Dinars </span>
 							</li>
 						</ol>
 					</section>
@@ -182,8 +182,5 @@
 
 <svelte:head>
 	<title>Soutenir iheb.tn</title>
-	<meta
-		name="description"
-		content="Soutenir ce site web"
-	/>
+	<meta name="description" content="Soutenir ce site web" />
 </svelte:head>
