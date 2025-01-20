@@ -52,3 +52,7 @@
 	<Icon data={ellipsisH} />
 	<span>Autres Outils</span>
 </a>
+<a href="https://eucast.iheb.tn">
+	<Icon data={book} />
+	<span>CA-SFM search</span>
+</a>
