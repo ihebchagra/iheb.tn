@@ -61,7 +61,7 @@
 							</li>
 							<li>
 								<span class="badge-icon p-4 variant-soft-primary">{2}</span>
-								<span class="flex-auto"> Choisir un montant &leq; 50 Dinars </span>
+								<span class="flex-auto"> Choisir un montant</span>
 							</li>
 						</ol>
 					</section>

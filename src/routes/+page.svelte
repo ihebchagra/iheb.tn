@@ -4,16 +4,14 @@
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-8 text-center flex flex-col items-center mt-4">
-		<h1 class="h1">Iheb Chagra</h1>
+		<h1 class="h1">Les Outils IHEB.TN</h1>
 		<!-- Animated Logo -->
-		<figure>
+		<!-- <figure>
 			<section class="img-bg" />
 			<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
 				<defs>
 					<mask id="cutout-mask">
-						<!-- Full polygon fill (white means keep, black means cut) -->
 						<rect x="0" y="0" width="72" height="72" fill="white" />
-						<!-- Rectangles to cut out -->
 						<rect x="43.425" y="31" width="3.6" height="6" fill="black" />
 						<rect x="25.175" y="31" width="3.6" height="6" fill="black" />
 					</mask>
@@ -27,20 +25,21 @@
 					<rect x="50" y="51" width="6" height="6" fill="currentColor" />
 				</g>
 			</svg>
-		</figure>
+		</figure> -->
 		<!-- / -->
-		<p>
-			Je suis Iheb, médecin résident en microbiologie. Je programme des sites web pour passer le
-			temps
+		<p class="max-w-prose">
+			Salut! Je suis <b>Iheb Chagra</b>, médecin résident en microbiologie. Je programme et maintient des sites web pour passer le
+			temps. Ce site contient quelques applications utile pour les jeunes médecins.
 		</p>
-		<h2 class="h2">Quelques projets j'ai programmé:</h2>
+		<h2 class="h2">Voici une liste de mes projets, cliquez pour en ouvrir un :</h2>
+
 		<div class="btn-group-vertical variant-ghost-surface w-80">
 			<AppList />
 		</div>
 
 		<h2 class="h2">Devenir un Supporteur:</h2>
 		<p class="">
-			Ce site coûte du temps et de l'argent de ma part pour maintenir, considérez me supportez <a
+			Mes projets coûtent du temps et de l'argent de ma part pour maintenir, considérez me supportez <a
 				href="/donate"
 				class="underline text-primary-500">sur ce lien</a
 			>
