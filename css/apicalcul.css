@@ -1,0 +1,377 @@
+/* Notice box */
+.notice {
+    border: 1px solid var(--border-color);
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    background-color: var(--notice-bg);
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.notice b {
+    font-weight: 700;
+}
+
+/* Database Selection - Academic journal style */
+.apicalcul-db-select {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--abstract-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.db-button {
+    padding: 8px 16px;
+    background-color: var(--paper-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Crimson Pro', 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.db-button:hover {
+    background-color: var(--abstract-bg);
+}
+
+.db-button.active {
+    background-color: var(--text-color);
+    color: var(--paper-bg);
+    border-color: var(--text-color);
+}
+
+/* Loading and Error states */
+.apicalcul-loading {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--abstract-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-style: italic;
+    transition: all 0.3s ease;
+}
+
+.apicalcul-error {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--notice-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Form container */
+.apicalcul-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Criteria list - organized grid */
+.criteria-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.criterion {
+    background-color: var(--abstract-bg);
+    border: 1px solid var(--light-border);
+    border-radius: 4px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.criterion:hover {
+    border-color: var(--border-color);
+}
+
+.criterion-label {
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.criterion-abbr {
+    font-size: 12px;
+    opacity: 0.7;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Toggle buttons */
+.toggle-group {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 6px 8px;
+    background-color: var(--paper-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Crimson Pro', 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+    background-color: var(--abstract-bg);
+}
+
+.toggle-btn.active {
+    border-width: 2px;
+    font-weight: 700;
+}
+
+/* Color classes for active buttons */
+.toggle-btn.active.yellow { background-color: #f4d03f; color: #1a1816; border-color: #d4a017; }
+.toggle-btn.active.green { background-color: #52c234; color: #1a1816; border-color: #3a8a24; }
+.toggle-btn.active.red { background-color: #e74c3c; color: #f8f6f0; border-color: #c0392b; }
+.toggle-btn.active.blue { background-color: #3498db; color: #f8f6f0; border-color: #2980b9; }
+.toggle-btn.active.aqua { background-color: #1abc9c; color: #f8f6f0; border-color: #16a085; }
+.toggle-btn.active.gray { background-color: #95a5a6; color: #f8f6f0; border-color: #7f8c8d; }
+.toggle-btn.active.black { background-color: #2c3e50; color: #f8f6f0; border-color: #1a252f; }
+.toggle-btn.active.white { background-color: #ecf0f1; color: #1a1816; border-color: #bdc3c7; }
+.toggle-btn.active.orange { background-color: #e67e22; color: #f8f6f0; border-color: #d35400; }
+.toggle-btn.active.purple { background-color: #9b59b6; color: #f8f6f0; border-color: #8e44ad; }
+.toggle-btn.active.pink { background-color: #fd79a8; color: #1a1816; border-color: #e84393; }
+.toggle-btn.active.brown { background-color: #8b4513; color: #f8f6f0; border-color: #654321; }
+
+/* Action buttons */
+.apicalcul-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding-top: 10px;
+    border-top: 1px solid var(--light-border);
+}
+
+.apicalcul-submit,
+.apicalcul-reset {
+    padding: 10px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Crimson Pro', 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.apicalcul-submit {
+    background-color: var(--text-color);
+    color: var(--paper-bg);
+    border: 2px solid var(--text-color);
+}
+
+.apicalcul-submit:hover {
+    opacity: 0.85;
+}
+
+.apicalcul-reset {
+    background-color: var(--paper-bg);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+}
+
+.apicalcul-reset:hover {
+    background-color: var(--abstract-bg);
+}
+
+/* Results section */
+.apicalcul-results {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid var(--border-color);
+}
+
+.apicalcul-results h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.results-wrapper {
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+/* Results table - scientific publication style */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+    background-color: var(--paper-bg);
+    font-size: 14px;
+}
+
+.results-table th {
+    background-color: var(--abstract-bg);
+    color: var(--text-color);
+    font-weight: 700;
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+}
+
+.results-table td {
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid var(--light-border);
+    color: var(--text-color);
+}
+
+.results-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.results-table tbody tr:hover {
+    background-color: var(--abstract-bg);
+}
+
+.results-table td:first-child {
+    font-weight: 600;
+    font-style: italic;
+    text-align: left;
+}
+
+.results-table td b {
+    font-weight: 700;
+}
+
+/* Incompatibilities display */
+.incompatibilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.incompat-item {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background-color: var(--notice-bg);
+    border: 1px solid var(--light-border);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.incompat-item span:first-child {
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+/* Legend */
+.legend {
+    font-size: 13px;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-top: 15px;
+    font-style: italic;
+    border-top: 1px solid var(--light-border);
+    padding-top: 10px;
+}
+
+.legend b {
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .criteria-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .criterion {
+        padding: 10px;
+    }
+
+    .criterion-label {
+        font-size: 13px;
+    }
+
+    .toggle-btn {
+        padding: 5px 6px;
+        font-size: 14px;
+    }
+
+    .apicalcul-actions {
+        flex-direction: column;
+    }
+
+    .apicalcul-submit,
+    .apicalcul-reset {
+        width: 100%;
+    }
+
+    .results-table {
+        font-size: 12px;
+    }
+
+    .results-table th,
+    .results-table td {
+        padding: 8px 6px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .apicalcul-db-select,
+    .apicalcul-actions {
+        display: none;
+    }
+
+    .notice {
+        border: 2px solid black;
+        background-color: white;
+    }
+
+    .results-table {
+        border: 2px solid black;
+    }
+
+    .results-table th {
+        background-color: #f0f0f0;
+    }
+}

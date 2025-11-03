@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIprofil — iheb.tn</title>
+    <script src="js/theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/apiprofil.css">
+    <link rel="manifest" href="/manifest.json?v=1">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">☾</span>
+    </button>
+
+    <header>
+        <h1 class="title"><a href="/" style="text-decoration: none; color: inherit;">iheb.tn</a></h1>
+        <div class="author">APIprofil</div>
+        <div class="affiliation">Consultation des profils biochimiques des galeries API</div>
+    </header>
+
+    <main>
+        <div class="notice">
+            <b>Remarque : </b>Les données proviennent des tables d'identification API. Elles représentent la probabilité (%) d'une réaction positive pour un taxon donné.
+        </div>
+
+        <!-- Database Selection -->
+        <div id="db-select" class="apiprofil-db-select"></div>
+
+        <!-- Loading Indicator -->
+        <div id="loading-section" class="apiprofil-loading" style="display: none;">
+            Chargement de la base...
+        </div>
+
+        <!-- Error Display -->
+        <div id="error-section" class="apiprofil-error" style="display: none;"></div>
+
+        <!-- Search Section -->
+        <div id="search-section" class="apiprofil-search-section" style="display: none;">
+            <div class="autocomplete-container">
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Rechercher un taxon et appuyer sur Entrée"
+                    class="search-input"
+                    aria-label="Terme de recherche">
+                <div id="autocomplete-dropdown" class="autocomplete-dropdown" style="display: none;">
+                    <ul id="autocomplete-list"></ul>
+                    <div id="autocomplete-empty" class="autocomplete-empty" style="display: none;">
+                        Aucun taxon correspondant.
+                    </div>
+                </div>
+            </div>
+            <button id="reset-button" class="apiprofil-reset-button" title="Réinitialiser la recherche">✖</button>
+        </div>
+
+        <!-- Placeholder -->
+        <div id="placeholder-section" class="apiprofil-placeholder" style="display: none;">
+            <p>Sélectionnez une base de données, commencez à taper le nom d'un taxon, puis appuyez sur <b>Entrée</b> pour voir le(s) profil(s) biochimique(s).</p>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section" class="apiprofil-results-container" style="display: none;"></div>
+    </main>
+
+    <script src="/js/apiprofil.js"></script>
+    <script src="/js/sw-register.js"></script>
+</body>
+</html>

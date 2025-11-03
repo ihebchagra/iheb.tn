@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CounterCell — iheb.tn</title>
+    <script src="js/theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/countercell.css">
+    <link rel="manifest" href="/manifest.json?v=1">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">☾</span>
+    </button>
+
+    <header>
+        <h1 class="title"><a href="/" style="text-decoration: none; color: inherit;">iheb.tn</a></h1>
+        <div class="author">CounterCell</div>
+        <div class="affiliation">Compteur de cellules pour examens hématologiques</div>
+    </header>
+
+    <main>
+        <div class="notice">
+            <b>Conseil :</b> Cliquez sur le grand bouton <b>'+'</b> pour incrémenter ou le petit <b>'-'</b> pour décrémenter.
+        </div>
+
+        <!-- Preset Selector -->
+        <div id="preset-select" class="preset-select"></div>
+
+        <!-- Main Counter Grid -->
+        <div id="counter-grid" class="counter-grid"></div>
+
+        <!-- Results Area -->
+        <div id="results-area" class="results-area" style="display: none;">
+            <div class="results-header">
+                <h2>Résultats</h2>
+                <div class="total-count-badge">
+                    Total: <span id="total-count">0</span>
+                </div>
+            </div>
+            <div id="results-list" class="results-list"></div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions-footer">
+            <button id="reset-button" class="action-button reset-button" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                </svg>
+                Réinitialiser
+            </button>
+        </div>
+
+        <!-- Placeholder when no counts yet -->
+        <div id="counter-placeholder" class="counter-placeholder">
+            <p>👇 Le compte est à zéro. Commencez à compter !</p>
+        </div>
+    </main>
+
+    <script src="/js/countercell.js"></script>
+    <script src="/js/sw-register.js?v=1"></script>
+</body>
+</html>

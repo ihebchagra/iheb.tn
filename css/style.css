@@ -203,6 +203,7 @@ p {
     text-align: justify;
     margin-bottom: 12px;
     line-height: 1.65;
+    hyphens: auto;
 }
 
 /* Abstract/Introduction box */
@@ -262,6 +263,7 @@ p {
     margin-top: 4px;
     font-size: 15px;
     text-align: justify;
+    hyphens: auto;
 }
 
 /* Links - minimal underline style */
@@ -305,8 +307,9 @@ a:hover {
 }
 
 .notice-box p {
-    text-align: center;
+    text-align: justify;
     margin-bottom: 8px;
+    hyphens: auto;
 }
 
 /* Footer */

@@ -1,2 +1,4 @@
 pdfjs
 page_*.webp
+sync
+.rsyncignore

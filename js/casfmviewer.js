@@ -39,10 +39,10 @@ class CASFMViewer {
         this.elements.backButton.addEventListener('click', () => {
             if (this.searchTerm) {
                 // Return to search with the search term
-                window.location.href = '/casfmsearch.html#q=' + encodeURIComponent(this.searchTerm);
+                window.location.href = '/casfm-search.html#q=' + encodeURIComponent(this.searchTerm);
             } else {
                 // Return to search homepage
-                window.location.href = '/casfmsearch.html';
+                window.location.href = '/casfm-search.html';
             }
         });
     }

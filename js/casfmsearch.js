@@ -136,7 +136,7 @@ class CASFMSearchApp {
         for (const chapter of this.tocData) {
             html += `
                 <li>
-                    <a href="/casfmviewer.html#p=${chapter.page}" class="toc-chapter">
+                    <a href="/casfm-viewer.html#p=${chapter.page}" class="toc-chapter">
                         ${SearchUtils.escapeHtml(chapter.title)}${chapter.page ? ` (p. ${chapter.page})` : ''}
                     </a>
             `;
@@ -147,7 +147,7 @@ class CASFMSearchApp {
                 for (const subchapter of chapter.subchapters) {
                     html += `
                         <li>
-                            <a href="/casfmviewer.html#p=${subchapter.page}" class="toc-subchapter">
+                            <a href="/casfm-viewer.html#p=${subchapter.page}" class="toc-subchapter">
                                 ${SearchUtils.escapeHtml(subchapter.title)}${subchapter.page ? ` (p. ${subchapter.page})` : ''}
                             </a>
                     `;
@@ -158,7 +158,7 @@ class CASFMSearchApp {
                         for (const subsection of subchapter.subsections) {
                             html += `
                                 <li>
-                                    <a href="/casfmviewer.html#p=${subsection.page}" class="toc-subsection">
+                                    <a href="/casfm-viewer.html#p=${subsection.page}" class="toc-subsection">
                                         ${SearchUtils.escapeHtml(subsection.title)}${subsection.page ? ` (p. ${subsection.page})` : ''}
                                     </a>
                                 </li>
@@ -301,7 +301,7 @@ class CASFMSearchApp {
             }
             
             return `
-                <div class="result-item" onclick="window.location.href='/casfmviewer.html#q=${encodeURIComponent(searchTerm)}&p=${result.page}'">
+                <div class="result-item" onclick="window.location.href='/casfm-viewer.html#q=${encodeURIComponent(searchTerm)}&p=${result.page}'">
                     <div class="result-header">
                         <span class="page-number">Page ${result.page}</span>
                     </div>

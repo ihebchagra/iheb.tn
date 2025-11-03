@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIcalcul — iheb.tn</title>
+    <script src="js/theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/apicalcul.css">
+    <link rel="manifest" href="/manifest.json?v=1">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">☾</span>
+    </button>
+
+    <header>
+        <h1 class="title"><a href="/" style="text-decoration: none; color: inherit;">iheb.tn</a></h1>
+        <div class="author">APIcalcul</div>
+        <div class="affiliation">Identification bactérienne par galeries API</div>
+    </header>
+
+    <main>
+        <div class="notice">
+            <b>Remarque : </b>Cette application n'a pas été validée scientifiquement. Ne pas l'utiliser dans un cadre pratique. À utiliser uniquement à des fins expérimentales.
+        </div>
+
+        <!-- Database Selection -->
+        <div id="db-select" class="apicalcul-db-select"></div>
+
+        <!-- Loading Indicator -->
+        <div id="loading-section" class="apicalcul-loading" style="display: none;">
+            Chargement de la base...
+        </div>
+
+        <!-- Error Display -->
+        <div id="error-section" class="apicalcul-error" style="display: none;"></div>
+
+        <!-- Criteria Form -->
+        <form id="criteria-form" class="apicalcul-form" style="display: none;">
+            <div id="criteria-list" class="criteria-list"></div>
+            
+            <div class="apicalcul-actions">
+                <button type="submit" class="apicalcul-submit">Calculer</button>
+                <button type="button" id="reset-button" class="apicalcul-reset">Réinitialiser</button>
+            </div>
+        </form>
+
+        <!-- Results Section -->
+        <div id="results-section" class="apicalcul-results" style="display: none;">
+            <h2>Résultats</h2>
+            <div class="results-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Taxon</th>
+                            <th>% ID</th>
+                            <th>Incompatibilités</th>
+                            <th>T Index</th>
+                            <th>Qualité</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-tbody"></tbody>
+                </table>
+            </div>
+            <div class="legend">
+                <b>Légende :</b> %ID = pourcentage d'identification, T Index = indice de typicité, Qualité = fiabilité de l'identification
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/apicalcul.js"></script>
+    <script src="/js/sw-register.js"></script>
+</body>
+</html>
