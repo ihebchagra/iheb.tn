@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA-SFM Viewer — iheb.tn</title>
+    <script src="js/casfmviewer.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/casfmviewer.css">
+    <link rel="manifest" href="/manifest.json?v=1">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+</head>
+<body class="viewer-body">
+    <!-- Compact Header with Back Button -->
+    <div class="compact-header">
+        <button id="back-button" class="back-button">← Retour</button>
+        <div class="header-info">
+            <span class="header-title">CA-SFM Viewer</span>
+            <span id="search-term-header" class="search-term-header" style="display: none;"></span>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <span class="theme-icon">☾</span>
+        </button>
+    </div>
+
+    <!-- PDF Viewer Container (Full Height) -->
+    <div id="viewer-container" class="viewer-container">
+        <iframe id="pdf-viewer"></iframe>
+    </div>
+
+    <!-- Load reusable modules -->
+    <script src="js/theme.js"></script>
+    <script src="js/search-utils.js"></script>
+</body>
+</html>

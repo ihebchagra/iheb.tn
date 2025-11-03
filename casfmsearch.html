@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA-SFM Search — iheb.tn</title>
+    <script src="js/theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/casfmsearch.css">
+    <script src="/wasm/sql-wasm.js"></script>
+    <link rel="manifest" href="/manifest.json?v=1">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">☾</span>
+    </button>
+
+    <header>
+        <h1 class="title"><a href="/" style="text-decoration: none; color: inherit;">iheb.tn</a></h1>
+        <div class="author">CA-SFM Search</div>
+        <div class="affiliation">Recommandations du Comité de l'Antibiogramme de la Société Française de Microbiologie</div>
+    </header>
+
+    <main>
+        <!-- Loading Database Indicator -->
+        <div id="loading-section" class="loading-section">
+            <p id="loading-status" class="loading-status-text">Initialisation...</p>
+            <progress id="loading-progress" value="0" max="100" class="loading-progress-bar"></progress>
+            <span id="loading-spinner" class="loading-spinner" style="display: none;">🗘</span>
+        </div>
+
+        <!-- Search UI -->
+        <div id="search-ui" class="search-ui-section" style="display: none;">
+            <input 
+                type="search" 
+                id="search-input" 
+                placeholder="Rechercher les recommandations..." 
+                class="search-input"
+            >
+            <button id="search-button" class="search-button">Rechercher</button>
+        </div>
+
+        <!-- Table of Contents (Default View) -->
+        <div id="toc-section" class="toc-section" style="display: none;">
+            <h2>Table des Matières</h2>
+            <div id="toc-content"></div>
+        </div>
+
+        <!-- Search Results -->
+        <div id="results-section" class="results-section" style="display: none;">
+            <div id="search-loading" class="results-loading-indicator" style="display: none;">
+                <span class="rotating-icon">🔍</span>
+                <span>Recherche en cours...</span>
+            </div>
+            <p id="search-error" class="search-error-message" style="display: none;"></p>
+            <p id="no-results" class="no-results-message" style="display: none;"></p>
+            <div id="results-list"></div>
+            <p id="result-limit" class="result-limit-message" style="display: none;">
+                Affichage des 100 premiers résultats. Affinez votre recherche pour des correspondances plus spécifiques.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Iheb Chagra. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Load reusable modules -->
+    <script src="js/search-utils.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/casfmsearch.js"></script>
+</body>
+</html>
