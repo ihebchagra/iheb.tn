@@ -56,10 +56,10 @@ class CASFMViewer {
             viewerUrl += `#page=${this.initialPage}`;
         }
         
-        // Add search parameter if specified
-        if (this.searchTerm) {
-            viewerUrl += `&search=${encodeURIComponent(this.searchTerm)}`;
-        }
+        // // Add search parameter if specified
+        // if (this.searchTerm) {
+        //     viewerUrl += `&search=${encodeURIComponent(this.searchTerm)}`;
+        // }
         
         // Load the viewer in iframe
         this.elements.pdfViewer.src = viewerUrl;
