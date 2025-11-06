@@ -38,7 +38,7 @@ class MedicasearchApp {
     
     async loadDatabase() {
         this.dbLoader = new DatabaseLoader({
-            dbPath: '/db/medicaments_fts.db?v=6',
+            dbPath: '/db/medicaments_fts.db?v=7',
             onProgress: (message, progress) => {
                 this.elements.loadingStatus.textContent = message;
                 this.elements.loadingProgress.value = progress;

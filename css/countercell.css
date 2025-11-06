@@ -121,6 +121,7 @@
     line-height: 1;
     user-select: none;
     font-family: 'Crimson Pro', 'Times New Roman', Times, serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .count-button:hover:not(:disabled) {

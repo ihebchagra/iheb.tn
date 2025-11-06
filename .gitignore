@@ -1,4 +1,4 @@
 pdfjs
 page_*.webp
-sync
+sync.sh
 .rsyncignore
