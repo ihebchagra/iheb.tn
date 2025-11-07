@@ -1,26 +1,11 @@
 // Service Worker for iheb.tn
 // Strategy: Stale-While-Revalidate for everything
 
-const CACHE_NAME = 'iheb-tn-v2';
+const CACHE_NAME = 'iheb-tn-v5';
 
 // Install event - cache core files
 self.addEventListener('install', (event) => {
     console.log('[Service Worker] Installing...');
-    
-    event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            console.log('[Service Worker] Caching core files');
-            return cache.addAll([
-                '/',
-                '/index.html',
-                '/css/style.css',
-                '/js/theme.js',
-                '/404.html',
-                '/manifest.json'
-            ]);
-        })
-    );
-    
     // Force the waiting service worker to become the active service worker
     self.skipWaiting();
 });

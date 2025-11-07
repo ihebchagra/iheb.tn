@@ -50,7 +50,7 @@ class CASFMSearchApp {
     
     async loadDatabase() {
         this.dbLoader = new DatabaseLoader({
-            dbPath: '/db/casfm_fts5.db?v=3',
+            dbPath: '/db/casfm_fts5.db?v=4',
             onProgress: (message, progress) => {
                 this.elements.loadingStatus.textContent = message;
                 this.elements.loadingProgress.value = progress;
@@ -237,10 +237,11 @@ class CASFMSearchApp {
             const query = `
                 SELECT 
                     rowid, page, chapter, subchapter, subsection,
-                    snippet(${this.ftsTableName}, 1, '<span class="highlight">', '</span>', '...', 20) as snippet
+                    snippet(${this.ftsTableName}, 1, '<span class="highlight">', '</span>', '...', 20) as snippet,
+                    bm25(${this.ftsTableName}, 1.0, 3.0, 4.0, 3.0) AS score
                 FROM "${this.ftsTableName}"
                 WHERE "${this.ftsTableName}" MATCH ?
-                ORDER BY rank
+                ORDER BY score ASC
                 LIMIT 101
             `;
             
@@ -273,6 +274,24 @@ class CASFMSearchApp {
         this.elements.resultsList.innerHTML = results.map(result => {
             let hierarchyHTML = '';
             
+            if (result.subsection) {
+                hierarchyHTML += `
+                    <div class="hierarchy-item">
+                        <span class="hierarchy-label">Sous-section:</span>
+                        <span>${SearchUtils.escapeHtml(result.subsection)}</span>
+                    </div>
+                `;
+            }
+
+            if (result.subchapter) {
+                hierarchyHTML += `
+                    <div class="hierarchy-item">
+                        <span class="hierarchy-label">Section:</span>
+                        <span>${SearchUtils.escapeHtml(result.subchapter)}</span>
+                    </div>
+                `;
+            }
+
             if (result.chapter) {
                 hierarchyHTML += `
                     <div class="hierarchy-item">
@@ -282,23 +301,6 @@ class CASFMSearchApp {
                 `;
             }
             
-            if (result.subchapter) {
-                hierarchyHTML += `
-                    <div class="hierarchy-item">
-                        <span class="hierarchy-label">Section:</span>
-                        <span>${SearchUtils.escapeHtml(result.subchapter)}</span>
-                    </div>
-                `;
-            }
-            
-            if (result.subsection) {
-                hierarchyHTML += `
-                    <div class="hierarchy-item">
-                        <span class="hierarchy-label">Sous-section:</span>
-                        <span>${SearchUtils.escapeHtml(result.subsection)}</span>
-                    </div>
-                `;
-            }
             
             return `
                 <div class="result-item" onclick="window.location.href='/casfm-viewer.html#q=${encodeURIComponent(searchTerm)}&p=${result.page}'">

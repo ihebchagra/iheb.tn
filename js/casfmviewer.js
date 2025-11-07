@@ -7,7 +7,7 @@ class CASFMViewer {
         this.initialPage = parseInt(searchParams.get('p')) || 1;
         
         // PDF.js viewer path - update this to your actual path
-        this.pdfViewerPath = '/js/pdfjs/web/viewer.html';
+        this.pdfViewerPath = '/js/pdfjs/web/viewer.html?v=1';
         this.pdfPath = '/db/casfm.pdf'; // Update this path
         
         // DOM elements
@@ -49,12 +49,14 @@ class CASFMViewer {
     
     loadPDF() {
         // Build the PDF.js viewer URL with parameters
-        let viewerUrl = `${this.pdfViewerPath}?file=${encodeURIComponent(this.pdfPath)}`;
-        
+        // let viewerUrl = `${this.pdfViewerPath}?file=${encodeURIComponent(this.pdfPath)}`;
+        let viewerUrl = `${this.pdfViewerPath}`;
+
         // Add page parameter if specified
         if (this.initialPage > 1) {
             viewerUrl += `#page=${this.initialPage}`;
         }
+
         
         // // Add search parameter if specified
         // if (this.searchTerm) {
