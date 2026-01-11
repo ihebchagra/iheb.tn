@@ -69,7 +69,7 @@ html[data-theme="dark"]::view-transition-new(root) {
 }
 
 body {
-    font-family: 'Crimson Pro', 'Times New Roman', Times, serif;
+    font-family: 'EB Garamond', 'Times New Roman', Times, serif;
     font-size: 16px;
     line-height: 1.6;
     /* background-color: var(--paper-bg); */
@@ -203,7 +203,7 @@ p {
     text-align: justify;
     margin-bottom: 12px;
     line-height: 1.65;
-    hyphens: auto;
+    /* hyphens: auto; */
 }
 
 /* Abstract/Introduction box */
@@ -263,7 +263,7 @@ p {
     margin-top: 4px;
     font-size: 15px;
     text-align: justify;
-    hyphens: auto;
+    /* hyphens: auto; */
 }
 
 /* Links - minimal underline style */
