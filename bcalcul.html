@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>B-Calcul — iheb.tn</title>
+
+        <!-- Resources -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="/css/style.css?v=6" />
+        <link rel="stylesheet" href="/css/bcalcul.css?v=1" />
+
+        <!-- Manifest/Icons -->
+        <link rel="manifest" href="/manifest.json?v=1" />
+        <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/icons/apple-touch-icon.png"
+        />
+
+        <!-- Dependencies -->
+        <script src="js/theme.js"></script>
+        <script src="/wasm/sql-wasm.js"></script>
+    </head>
+    <body>
+        <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle dark mode"
+        >
+            <span class="theme-icon">☾</span>
+        </button>
+
+        <header>
+            <h1 class="title"><a href="/">iheb.tn</a></h1>
+            <div class="author">B-Calcul</div>
+            <div class="affiliation">
+                Outil de calcul du prix d'un bilan biologique
+            </div>
+        </header>
+
+        <main>
+            <!-- Loader -->
+            <div id="loader" class="loader-container">
+                <p id="loader-text" class="loader-status">Initialisation...</p>
+                <progress
+                    id="loader-bar"
+                    value="0"
+                    max="100"
+                    class="loader-progress"
+                ></progress>
+                <span id="loader-spinner" class="loader-spinner">♻</span>
+            </div>
+
+            <!-- Application Container -->
+            <div id="app" class="app-hidden">
+                <div class="notice-box">
+                    <b>Note :</b> Sélectionnez les paramètres, ajoutez les
+                    prélèvements (APB) puis recherchez les bilans pour obtenir
+                    le devis.
+                </div>
+
+                <!-- 1. Configuration -->
+                <section class="calc-section">
+                    <h2>1. Paramètres de calcul</h2>
+                    <div class="calc-section-box">
+                        <div class="config-grid">
+                            <div class="input-group">
+                                <label for="config-b">Valeur du B (TND)</label>
+                                <input
+                                    type="number"
+                                    id="config-b"
+                                    class="std-input"
+                                    step="0.001"
+                                    min="0.100"
+                                    max="1.000"
+                                    value="0.340"
+                                />
+                            </div>
+                            <div class="input-group">
+                                <label for="config-apb"
+                                    >Valeur de l'APB (TND)</label
+                                >
+                                <input
+                                    type="number"
+                                    id="config-apb"
+                                    class="std-input"
+                                    step="0.100"
+                                    min="1.000"
+                                    max="5.000"
+                                    value="2.000"
+                                />
+                            </div>
+                        </div>
+                        <div class="input-hint">
+                            <br />
+                            Privé : 0.300 - 0.340 TND<br />
+                            CNAM : 0.280 TND<br />
+                            Hôpital / Institut pasteur: 0.160 TND
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. APB Selection -->
+                <section class="calc-section">
+                    <h2>2. Acte de prélèvement (APB)</h2>
+
+                    <div class="action-row">
+                        <div class="input-group grow">
+                            <select id="apb-select" class="std-select">
+                                <option value="">
+                                    -- Sélectionner un acte --
+                                </option>
+                            </select>
+                        </div>
+                        <button id="btn-add-apb" class="btn-action">
+                            <b>Ajouter</b>
+                        </button>
+                    </div>
+
+                    <div class="input-group mt-medium">
+                        <label for="apb-km">Indemnité kilométrique :</label>
+                        <div class="input-wrapper">
+                            <input
+                                type="number"
+                                id="apb-km"
+                                class="std-input"
+                                min="0"
+                                value="0"
+                                placeholder="0"
+                            />
+                            <span class="unit-label">km (× 1 APB)</span>
+                        </div>
+                    </div>
+
+                    <div class="list-container">
+                        <div id="list-apb" class="list-content"></div>
+                        <div id="empty-apb" class="empty-state">
+                            Aucun acte de prélèvement ajouté.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Bilans Selection -->
+                <section class="calc-section">
+                    <h2>3. Bilans</h2>
+
+                    <div class="search-container">
+                        <div class="autocomplete-wrapper">
+                            <input
+                                type="search"
+                                id="search-input"
+                                class="std-input search-field"
+                                placeholder="Rechercher (Code ou Nom)..."
+                                autocomplete="off"
+                            />
+
+                            <div
+                                id="search-results"
+                                class="autocomplete-dropdown hidden"
+                            >
+                                <ul id="results-list"></ul>
+                                <div
+                                    id="results-empty"
+                                    class="autocomplete-empty hidden"
+                                >
+                                    Aucun examen trouvé.
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            id="btn-reset-search"
+                            class="btn-reset"
+                            title="Effacer"
+                        >
+                            ✖
+                        </button>
+                    </div>
+
+                    <div id="error-msg" class="error-banner hidden"></div>
+
+                    <div class="list-container">
+                        <div id="list-bilans" class="list-content"></div>
+                        <div id="empty-bilans" class="empty-state">
+                            Aucun bilan ajouté.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Result Display -->
+                <section class="result-section">
+                    <div class="result-card">
+                        <div class="result-label">
+                            Montant Total TTC (avec 7% TVA)
+                        </div>
+                        <div class="result-value">
+                            <span id="res-total">0.000</span>
+                            <span class="currency">TND</span>
+                        </div>
+                        <div class="result-details">
+                            <span id="res-detail-apb">APB: 0.000</span> •
+                            <span id="res-detail-b">Bilans: 0.000</span> •
+                            <span id="res-detail-tva">TVA: 0.000</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="total-bar">
+            <div class="total-summary">
+                <div class="summary-item">
+                    <span class="label">Total APB</span>
+                    <span class="value" id="footer-count-apb">0</span>
+                </div>
+                <div class="divider"></div>
+                <div class="summary-item">
+                    <span class="label">Total B</span>
+                    <span class="value" id="footer-count-b">0</span>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/database.js"></script>
+        <script src="js/search-utils.js"></script>
+        <script src="/js/bcalcul.js?v=1"></script>
+    </body>
+</html>
