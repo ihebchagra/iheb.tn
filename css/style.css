@@ -324,6 +324,10 @@ footer {
     transition: all 0.3s ease;
 }
 
+footer > p {
+    text-align: center;
+}   
+
 /* Section dividers */
 hr {
     border: none;

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicar-Calcul — iheb.tn</title>
+    <script src="js/theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v=7">
+    <link rel="stylesheet" href="/css/bicar-calcul.css?v=2">
+    <link rel="manifest" href="/manifest.json?v=1">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">☾</span>
+    </button>
+
+    <header>
+        <h1 class="title"><a href="/" style="text-decoration: none; color: inherit;">iheb.tn</a></h1>
+        <div class="author">Bicar-Calcul</div>
+        <div class="affiliation">Calcul du bicarbonate, CO₂ total et Excès de Base</div>
+    </header>
+
+    <main>
+        <!-- Input Section -->
+        <section class="calc-section">
+            <div class="calc-section-box">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="ph-input">pH</label>
+                        <input
+                            type="number"
+                            id="ph-input"
+                            class="std-input"
+                            step="0.01"
+                            min="6.0"
+                            max="8.0"
+                            placeholder="Ex: 7.40"
+                            value="7.40"
+                        />
+                    </div>
+                    <div class="input-group">
+                        <label for="paco2-input">PaCO₂ (mmHg)</label>
+                        <input
+                            type="number"
+                            id="paco2-input"
+                            class="std-input"
+                            step="1"
+                            min="10"
+                            max="150"
+                            placeholder="Ex: 40"
+                            value="40"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="action-section">
+            <div class="action-buttons">
+                <button id="btn-calculate" class="btn-calculate">
+                    Calculer
+                </button>
+                <button id="btn-reset" class="btn-reset">
+                    Réinitialiser
+                </button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="results-section" style="display: none;">
+            <h2>Résultats</h2>
+
+            <div class="results-grid">
+                <!-- Bicarbonate Card -->
+                <div class="result-card">
+                    <div class="result-label">
+                        Bicarbonates [HCO₃⁻]
+                    </div>
+                    <div class="result-value">
+                        <span id="hco3-value">--</span>
+                        <span class="result-unit">mmol/L</span>
+                    </div>
+                </div>
+
+                <!-- CO2 Total Card -->
+                <div class="result-card">
+                    <div class="result-label">
+                        CO₂ total [Réserves alcaline]
+                    </div>
+                    <div class="result-value">
+                        <span id="co2-total-value">--</span>
+                        <span class="result-unit">mmol/L</span>
+                    </div>
+                </div>
+
+                <!-- Base Excess Card -->
+                <div class="result-card">
+                    <div class="result-label">
+                        Excès de Base
+                    </div>
+                    <div class="result-value">
+                        <span id="be-value">--</span>
+                        <span class="result-unit">mmol/L</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attribution -->
+        <section class="attribution-section">
+            <div class="attribution-box">
+                Basé sur un guide rédigé par <b>Dr. Emna Sahli</b> sous l'encadrement du <b>Pr. Souheil Omar</b>.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Iheb Chagra. Tous droits réservés.</p>
+    </footer>
+
+    <script src="/js/bicar-calcul.js?v=2"></script>
+    <script src="/js/sw-register.js?v=5"></script>
+</body>
+</html>
